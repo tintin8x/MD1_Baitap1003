@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai kiem ta 20/03/2022</title>
+</head>
+<body>
+  <div>
+        <h2>Bài tập 1</h2>
+        <p>Câu lệnh để hiển thì 1 hộp thoại: prompt('tiêu đề hộp thoại'), alert('nội dung muốn hiển thị') </p>
+        <p> prompt('tiêu đề hộp thoại'): hiển thị hộp thoại có ô nhập liệu</p>
+        <p> alert('nội dung muốn hiển thị'): hiển thị hộp thoại thông báo</p>
+        <button id="btn1" onclick="hienthihopthoai1()" >Demo lệnh prompt('Đây là lệnh hiển thị hộp thoại nhập liệu')</button>
+         <br><br>
+        <button id="btn2" onclick="hienthihopthoai2()" >Demo lệnh alert('nội dung muốn hiển thị')</button>
+
+  </div>
+  <div>
+      <h2>Bài tập 2</h2>
+      <p>Câu lệnh để nhận giá trị từ hộp thoại: gán lệnh hiển thị hộp thoại vào 1 biến : </p>
+      <p>let tenbien = prompt('tiêu đề hộp thoại'); </p>
+      <button id="btn3" onclick="hienthihopthoai()" >Demo lệnh lấy giá trị từ hộp thoại, hiển thị bình phương của số đó ra hộp thoại</button>
+      <p id="giatrihopthoai"></p>
+  </div>
+    <div>
+        <h2>Bài tập 3</h2>
+        <p>Nhận a và b từ 2 hộp thoại, in ra s=a*b ra thẻ h1</p>
+        <p>Bước 1: Hiển thị hộp thoại để nhập giá trị a, lấy giá trị vào biến a</p>
+        <p>Bước 2: Hiển thị hộp thoại để nhập giá trị a, lấy giá trị vào biến b</p>
+        <p>Bước 3: Khai báo biến s có giá trị bằng a*b</p>
+        <p>Bước 4: In ra giá trị s vào thẻ h1 qua lệnh document.document.getElementById('id_cua_the_h1').</p>
+        <button id="btn4" onclick="baitap3()" >Demo Bài tập 3</button>
+        <h1 id="kqbt3"></h1>
+    </div>
+<div>
+    <h2>Bài tập 4</h2>
+    <h3>    4a. Nhập vào a, hiển thị chu vi và diện tích hình vuông cạnh a</h3>
+    <button id="btn5" onclick="baitap4a()" >Demo Bài tập 4a</button>
+    <h3 id="kq4a" style="color: blue"></h3>
+    <h3>    4b. Nhập vào a và b, tính ra a^2, a^b</h3>
+    <button id="btn6" onclick="baitap4b()" >Demo Bài tập 4b</button>
+    <h3 id="kq4b" style="color: blue"></h3>
+    <h3>    4c. Nhập vào a và b, tính tổng các số từ a đến b</h3>
+    <button id="btn7" onclick="baitap4c()" >Demo Bài tập 4c</button>
+    <h3>    4d. Nhập vào a là năm, in ra thế kỷ</h3>
+    <button id="btn8" onclick="baitap4d()" >Demo Bài tập 4d</button>
+    <h3>    4e. Nhập vào a, b, c kiểm tra a, b, c có phải là 3 cạnh của tam giác ko? và là tam giác gì? (thường?cân?vuông?thường?)</h3>
+    <button id="btn9" onclick="baitap4e()" >Demo Bài tập 4e</button>
+</div>
+</body>
+<script type="text/javascript">
+    //Bải tập 1
+    function hienthihopthoai1(){
+        prompt('Đây là lệnh hiển thị hộp thoại nhập liệu');
+    }
+    function hienthihopthoai2(){
+        alert('Đây là lệnh hiển thị hộp thoại thông báo');
+    }
+    //Bải tập 2
+    function hienthihopthoai(){
+        let giatri = prompt('đây là lệnh hiển thị hộp thoại');
+        //document.getElementById('giatrihopthoai').innerHTML= "Giá trị lấy ra từ hộp thoại là: " + giatri * giatri;
+        alert("Bình phương của số vừa nhập là: " + giatri * giatri);
+    }
+    //Bải tập 3
+    function baitap3(){
+        let a = +prompt('Nhập a: ');
+        let b = +prompt('Nhập b: ');
+        let s = a * b;
+        document.getElementById('kqbt3').innerHTML="Giá trị của s=a*b=" + s;
+    }
+    //Bải tập 4a
+    function baitap4a(){
+        let a = +prompt('Nhập a: ');
+        let b = a * 4;
+        let c = a * a;
+        document.getElementById('kq4a').innerHTML="Hình vuông cạnh a có chu vi là " + b + " và diện tích là " + c;
+    }
+    //Bải tập 4b
+    function baitap4b(){
+        let a = +prompt('Nhập a: ');
+        let b = +prompt('Nhập b: ');
+        let c = a * a;
+        let d = a * * b;
+        document.getElementById('kq4b').innerHTML="a ^ 2= " + c + "; a ^ b= " + d;
+    }
+</script>
+</html>
