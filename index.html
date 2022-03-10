@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bai kiem ta 20/03/2022</title>
+    <title>Bai kiem ta 10/03/2022</title>
 </head>
 <body>
   <div>
@@ -42,10 +42,13 @@
     <h3 id="kq4b" style="color: blue"></h3>
     <h3>    4c. Nhập vào a và b, tính tổng các số từ a đến b</h3>
     <button id="btn7" onclick="baitap4c()" >Demo Bài tập 4c</button>
+    <h3 id="kq4c" style="color: blue"></h3>
     <h3>    4d. Nhập vào a là năm, in ra thế kỷ</h3>
     <button id="btn8" onclick="baitap4d()" >Demo Bài tập 4d</button>
+    <h3 id="kq4d" style="color: blue"></h3>
     <h3>    4e. Nhập vào a, b, c kiểm tra a, b, c có phải là 3 cạnh của tam giác ko? và là tam giác gì? (thường?cân?vuông?thường?)</h3>
     <button id="btn9" onclick="baitap4e()" >Demo Bài tập 4e</button>
+    <h3 id="kq4e" style="color: blue"></h3>
 </div>
 </body>
 <script type="text/javascript">
@@ -81,8 +84,55 @@
         let a = +prompt('Nhập a: ');
         let b = +prompt('Nhập b: ');
         let c = a * a;
-        let d = a * * b;
+        let d = a ** b;
         document.getElementById('kq4b').innerHTML="a ^ 2= " + c + "; a ^ b= " + d;
     }
-</script>
+    //Bải tập 4c
+    function baitap4c(){
+        let a = +prompt('Nhập a: ');
+        let b = +prompt('Nhập b: ');
+        let c ;
+        if(a>b){
+            c = (a + b) * (a - b + 1) / 2;
+            document.getElementById('kq4c').innerHTML="Tổng các số từ b đến a = " + c;
+        }else{
+            c = (a + b) * (b - a + 1) / 2;
+            document.getElementById('kq4c').innerHTML="Tổng các số từ a đến b = " + c;
+        }
+    }
+    // //Bải tập 4d
+    function baitap4d(){
+        let a = +prompt('Nhập năm: ');
+        let b = parseInt(a/100);
+        if (b>0) {
+            document.getElementById('kq4d').innerHTML= "Năm " + a + " thuộc thế kỷ " + (b + 1) ;
+        }else{
+            document.getElementById('kq4d').innerHTML= "Năm " + a + " thuộc thế kỷ " + (b - 1) * -1 + " trước Công Nguyên";
+        }
+
+    }
+    // //Bải tập 4e
+    function baitap4e(){
+        let a = +prompt('Nhập cạnh a: ');
+        let b = +prompt('Nhập cạnh b: ');
+        let c = +prompt('Nhập cạnh c: ');
+        let tinhchat;
+
+        if (a+b>c && b+c>a && c+a>b) {
+            if (a==b && a==c ){
+                tinhchat = " là 3 cạnh của tam giác đều! ";
+            }else if(a==b || a==c || b==c){
+                tinhchat = " là 3 cạnh của tam giác cân! ";
+            }else if((a * a == b * b + c * c) || (b * b == a * a + c * c) || (c * c == b * b + a * a)){
+                tinhchat = " là 3 cạnh của tam giác vuông! ";
+                if(a==b || a==c || b==c) {
+                    tinhchat = " là 3 cạnh của tam giác vuông cân! ";
+                }
+            }
+        }else{
+            tinhchat = " không phải là 3 cạnh của 1 tam giác!";
+        }
+        document.getElementById('kq4e').innerHTML= "a = " + a + ", b = " + b +  ", c = " + c  + tinhchat;
+    }
+</script
 </html>
